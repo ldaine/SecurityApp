@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body ng-controller="MainCtrl as main">
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header"><a href="/" class="navbar-brand">Security Crypto App</a></div>
@@ -27,7 +27,7 @@
     				<h2>Encrypt</h2>
     				<div class="input">
     					<div>
-    					<h3>Input</h3>
+    					   <h3>Input</h3>
     						<textarea ng-model="sc.encryptData.input"
                                       ng-change="sc.encrypt(sc.encryptData.input, sc.encryptData.key)"
                                       placeholder="Text here">
@@ -130,7 +130,6 @@
     <!--ANGULAR MAIN-->
     <script type="text/javascript" src="app/app.module.js"></script>
     <!--CONTROLLERS-->
-    <script type="text/javascript" src="app/main.controller.js"></script>
     <script type="text/javascript" src="app/shiftcipher.controller.js"></script>
     <script type="text/javascript" src="app/vigenere.controller.js"></script>
     <script type="text/javascript" src="app/gcd.controller.js"></script>
