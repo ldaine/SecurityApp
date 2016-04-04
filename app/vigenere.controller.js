@@ -53,10 +53,8 @@
 
                     //finding the key letter (K in the previous example)
                     var keyLetter = keyword[keyIndex];
-
-                    //the key should be a number which is always > 0
-                    //the letter 'A' has index of 0. this is the reson why an 1 should be always added. 
-                    var key = alphabet.indexOf(keyLetter) + 1;
+                    //the actual key = index in the alphabet array
+                    var key = alphabet.indexOf(keyLetter);
                     
 
                     //if the key is bigger than 26 (size of the alphabet used in array)
@@ -125,7 +123,8 @@
 
                     //finding the key
                     var keyLetter = keyword[keyIndex];
-                    var key = alphabet.indexOf(keyLetter) + 1;
+                    //the actual key = index in the alphabet array
+                    var key = alphabet.indexOf(keyLetter);
 
                     if (key > 25) {
                         key = key - 26;
