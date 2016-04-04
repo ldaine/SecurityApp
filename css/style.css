@@ -1,0 +1,72 @@
+html, body {
+    height:100%;
+    background:center no-repeat fixed url('/assets/example/bg_suburb.jpg');
+    background-size: cover;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+section {
+  padding-top:50px;  
+  padding-bottom:50px; 
+  min-height:calc(50% - 1px);
+}
+
+a {
+  color: #00B7FF;
+}
+
+label {
+  font-size: 14px;
+}
+p {
+  font-size: 12px;
+  min-height:50px;
+  width: 100%;
+  background-color:rgba(255,255,255,0.7);
+}
+
+p.error{
+  min-height:0;
+  color: red;
+}
+
+th{
+  border: solid 1px grey;
+  font-size:14px;
+}
+
+input.character {
+  width: 15px;
+}
+
+input {
+  margin: 5px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  display:block;
+}
+
+#ceaser {
+
+	background-color: #BFD2F2;
+}
+
+#exercise4 {
+
+	background-color: #AFC1E9;
+}
+
+#vigenere {
+
+	background-color: #B0C6EA;
+}
+
+#GCD {
+
+	background-color: #D0C8CA;
+}

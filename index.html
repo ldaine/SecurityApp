@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="SecurityApp">
+<head>
+    <title>Security Crypto App</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="MainCtrl as main">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header"><a href="/" class="navbar-brand">Security Crypto App</a></div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#shiftcypher">Shift Cipher</a></li>
+    				<li><a href="#vigenere">Vigenere Cipher</a></li>
+    				<li><a href="#GCD">GCD</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section id="ceaser" class="container-fluid" ng-controller="shiftCipherCtrl as sc">
+        <div class="container">
+            <div class="row">
+                <h1 ng-bind="sc.title"></h1>
+    			<div class="col-md-6">
+    				<h2>Encrypt</h2>
+    				<div class="input">
+    					<div>
+    					<h3>Input</h3>
+    						<textarea ng-model="sc.encryptData.input"
+                                      ng-change="sc.encrypt(sc.encryptData.input, sc.encryptData.key)"
+                                      placeholder="Text here">
+    						</textarea>
+    					</div>
+    					<label>Key: </label>
+    					<input type="number"
+    						   ng-model="sc.encryptData.key"
+    						   ng-change="sc.encrypt(sc.encryptData.input, sc.encryptData.key)">
+                        <h3>Encrypted text</h3>
+    					<p>{{sc.encryptData.output}}</p>
+    				</div>
+    			</div>
+    			<div class="col-md-6">
+    				<h2>Decrypt</h2>
+    				<div class="input">
+    					<h3>Input</h3>
+    					<textarea ng-model="sc.decryptData.input"
+                                  ng-change="sc.decrypt(sc.decryptData.input, sc.decryptData.key)"
+                                  placeholder="Text here">
+    					</textarea>
+    					<label>Key: </label>
+                        <input type="number"
+    						   ng-model="sc.decryptData.key"
+    						   ng-change="sc.decrypt(sc.decryptData.input, sc.decryptData.key)">
+                        <h3>Decrypted text</h3>
+    					<p>{{sc.decryptData.output}}</p>
+    				</div>
+    			</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vigenere" class="container-fluid" ng-controller="vigenereCtrl as vgn">
+        <div class="container">
+            <div class="row">
+                <h1>{{vgn.title}}</h1>
+                <div class="col-md-6 input">
+                    <h2>Encrypt</h1>
+                    <h3> Input </h3>
+                    <textarea ng-model="vgn.encryptData.input"
+                              ng-change="vgn.encrypt(vgn.encryptData.input, vgn.encryptData.keyword)"
+                              placeholder="Text here">
+                    </textarea>
+
+                    <label>Keyword</label>
+                    <input type="text"
+                           placeholder="enter keyword"
+                           ng-model="vgn.encryptData.keyword"
+                           ng-change="vgn.encrypt(vgn.encryptData.input, vgn.encryptData.keyword)"/>
+                    <p class="error" ng-bind="vgn.encryptData.error"></p>
+
+                    <h3> Output </h3>
+    				<p>{{vgn.encryptData.output}}</p>
+                </div>
+                <div class="col-md-6 input">
+                    <h2>Decrypt</h1>
+                    <h3> Input </h3>
+                    <textarea ng-model="vgn.decryptData.input"
+                              ng-change="vgn.decrypt(vgn.decryptData.input, vgn.decryptData.keyword)"
+                              placeholder="Text here">
+                    </textarea>
+                    <label>Keyword</label>
+                    <input type="text"
+                           placeholder="enter keyword"
+                           ng-model="vgn.decryptData.keyword"
+                           ng-change="vgn.decrypt(vgn.decryptData.input, vgn.decryptData.keyword)"/>
+
+                    <p class="error" ng-bind="vgn.decryptData.error"></p>
+                    <h3> Output </h3>
+                    <p>{{vgn.decryptData.output}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="GCD"  class="container-fluid" ng-controller="gcdCtrl as vm">
+        <div class="container">
+            <div class="row">
+                <h1>{{vm.title}}</h1>
+                <div class="col-md-6 input">
+                    <label>Number 1: </label>
+                    <input type="number" ng-model="vm.gcd.inputNumber1"/>
+                    <label>Number 2: </label>
+                    <input type="number" ng-model="vm.gcd.inputNumber2" 
+                            ng-change="vm.calculateGCD(vm.gcd.inputNumber1, vm.gcd.inputNumber2)"/>
+                    <p>{{vm.gcd.outputNumber}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    <footer class="container text-center">
+        <p>&copy 2016 Liga Daine</p>
+    </footer>
+    <!--GENERAL INCLUDES-->
+    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <!--ANGULAR MAIN-->
+    <script type="text/javascript" src="app/app.module.js"></script>
+    <!--CONTROLLERS-->
+    <script type="text/javascript" src="app/main.controller.js"></script>
+    <script type="text/javascript" src="app/shiftcipher.controller.js"></script>
+    <script type="text/javascript" src="app/vigenere.controller.js"></script>
+    <script type="text/javascript" src="app/gcd.controller.js"></script>
+
+</body>
+</html>
