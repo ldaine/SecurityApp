@@ -2,7 +2,7 @@
     angular.module('SecurityApp')
         .controller('vigenereCtrl', vigenereCtrl);
 
-    function vigenereCtrl ($scope) {
+    function vigenereCtrl () {
         var vm = this;
         var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         vm.title = "Vigenere Cipher";

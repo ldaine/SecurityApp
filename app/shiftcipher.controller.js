@@ -2,7 +2,7 @@
     angular.module('SecurityApp')
         .controller('shiftCipherCtrl', shiftCipherCtrl);
 
-    function shiftCipherCtrl ($scope) {
+    function shiftCipherCtrl () {
         var vm = this;
         var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         
@@ -42,8 +42,6 @@
             //chaning the text to Uppercase (the example array uses uppercase letters)
             input = input.toUpperCase();
             
-            console.log('input ' + input);
-
             //looping through text
             for (var i = 0; i < input.length; i++) {
 
